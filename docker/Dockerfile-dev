@@ -23,8 +23,17 @@ RUN conda install -c nilmtk nilmtk
 #Get dataset
 RUN git clone https://github.com/ch-shin/ENERTALK-dataset.git /app/ENERTALK-dataset
 
+#Get pybridge
+RUN git clone https://github.com/aranega/pybridge.git /app/pybridge
+
 
 #Install ENERTALK dependencies
 COPY ./docker/requirements.* /app/
+COPY ./docker/start.sh /app/
 RUN pip install -r /app/requirements.dev.txt
 RUN pip install -r /app/requirements.txt
+
+RUN conda install nb_conda
+
+
+RUN chmod +x /app/start.sh

@@ -10,7 +10,7 @@
 ## Build the docker image
 > docker-compose build dev
 ## Run the docker image
- > docker-compose run -p 8888:8888  dev
+ > docker-compose run -p 8888:8888 -p 5000:5000 -p 4321:4321  dev
 
 Then connect on provided local URL to get jupyter lab
 
