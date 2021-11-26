@@ -1,4 +1,4 @@
-# hackatechlille-binpacking
+# hackatechlille-smartiot
 
 
 # Description

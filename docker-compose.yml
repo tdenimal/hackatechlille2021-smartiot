@@ -2,6 +2,7 @@ version: '3.7'
 # How to use :
 # > docker-compose build dev
 # > docker-compose run -p 8888:8888  dev
+## Then connect on provided URL to get jupyter lab
 
 
 services:
@@ -11,7 +12,11 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile-dev
     volumes:
-      - ./docker:/app
+      - ./docker/data:/app/data
+      - ./docker/notebooks:/app/notebooks
     ports :
       - 8888:8888
-    command: jupyter lab --allow-root --ip 0.0.0.0
+    command: >
+      /bin/bash -c "source /root/.bashrc && 
+      jupyter server extension disable nbclassic &&  
+      jupyter lab --allow-root --ip 0.0.0.0 "
