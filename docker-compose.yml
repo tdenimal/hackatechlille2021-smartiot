@@ -18,11 +18,4 @@ services:
       - 8888:8888
       - 4321:4321 #ports de sortie
       - 5000:5000 #ports en entree
-
-    # cd /app/pybridge && git checkout python && python server.py
     command: /app/start.sh
-      
-#/bin/bash -c "source /root/.bashrc && 
-#jupyter server extension disable nbclassic &&  
-#nohup jupyter lab --allow-root --ip 0.0.0.0 \& &&
-#cd /app/pybridge && git checkout python && nohup python server.py \& && tail -f nohup.out"
