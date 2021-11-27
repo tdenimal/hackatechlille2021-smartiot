@@ -10,9 +10,9 @@
 ## Build the docker image
 > docker-compose build dev
 ## Run the docker image
- > docker-compose run -p 8888:8888 -p 5000:5000 -p 4321:4321  dev
+ > docker-compose run -p 10000:10000  dev
 
-This starts jupyter lab on 8888 port & pybridge on 5000/4321 ports
+This starts flask server on port 10000, that will send pred results
 
 
 
