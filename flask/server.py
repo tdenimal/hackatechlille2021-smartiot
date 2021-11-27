@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, Response
 import os
 from os.path import join, dirname, realpath
 
+import gzip
+
 app = Flask(__name__)
 
 # enable debugging mode
@@ -36,7 +38,7 @@ app.config['UPLOAD_FOLDER'] =  UPLOAD_FOLDER
 # Get http method
 @app.route("/", methods=['GET'])
 def get_method():
-    with open("static/files/prediction.csv") as fp:
+    with gzip.open("static/files/prediction.csv.gz") as fp:
          csv = fp.read()
     return Response(
         csv,
