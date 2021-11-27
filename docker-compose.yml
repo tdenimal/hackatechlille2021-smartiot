@@ -14,8 +14,10 @@ services:
     volumes:
       - ./data:/app/data
       - ./docker/notebooks:/app/notebooks
+      - ./flask:/app/flask
     ports :
       - 8888:8888
       - 4321:4321 #ports de sortie
       - 5000:5000 #ports en entree
+      - 10000:10000 #2nd flask server to upload
     command: /app/start.sh

@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # Start the first process
-source /root/.bashrc && jupyter server extension disable nbclassic &&  jupyter lab --allow-root --ip 0.0.0.0 &
+#source /root/.bashrc && jupyter server extension disable nbclassic &&  jupyter lab --allow-root --ip 0.0.0.0 &
   
 # Start the second process
-source /root/.bashrc && cd /app/pybridge && git checkout python && python server.py &
+#source /root/.bashrc && cd /app/pybridge && git checkout python && python server.py &
+
+
+# Start the flask server to upload files
+source /root/.bashrc && cd /app/flask && python server.py &
   
 # Wait for any process to exit
 wait -n
